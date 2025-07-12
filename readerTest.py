@@ -6,8 +6,6 @@ from machine import Pin
 from machine import SPI
 from machine import Pin, PWM
 from time import sleep_ms
-buzzer = Pin(33, Pin.OUT)
-buzzer.value(0)
 
 
 spi = SPI(2, baudrate=2500000, polarity=0, phase=0)
@@ -24,6 +22,8 @@ spi = SPI(2, baudrate=2500000, polarity=0, phase=0)
 spi.init()
 rdr = MFRC522(spi=spi, gpioRst=4, gpioCs=5)
 
+buzzer = Pin(33, Pin.OUT)
+buzzer.value(0)
 def beep(duration_ms=200):
     buzzer.value(1)  # Turn buzzer on
     sleep_ms(duration_ms)
