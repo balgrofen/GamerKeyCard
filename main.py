@@ -1,3 +1,4 @@
+
 #active buzzer setup
 buzzer = Pin(33, Pin.OUT)
 buzzer.value(0)
@@ -69,7 +70,9 @@ def denied(): # denied screen when the card is not recognised
     display.show()
     sleep(2)
     
-
+# Start web server in a background thread
+_thread.start_new_thread(webpage.start, ())
+    
 
 while True:
     w84crd() #showing the main screen

@@ -8,7 +8,9 @@ import ssd1306
 from mfrc522 import MFRC522
 from time import sleep
 from time import sleep_ms
-import framebuf 
+import framebuf
+import webpage
+import _thread
 
 
 #Starting the MFR522
